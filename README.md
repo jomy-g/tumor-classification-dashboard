@@ -1,5 +1,12 @@
 # Breast Cancer Classification ML App
 
+
+**🔗 Quick Links:**
+- **Live App:** [https://tumor-classification-dashboard-d6kxf5xxmzk8gza3ujfuae.streamlit.app/](https://tumor-classification-dashboard-d6kxf5xxmzk8gza3ujfuae.streamlit.app/)
+- **GitHub:** [https://github.com/jomy-g/tumor-classification-dashboard](https://github.com/jomy-g/tumor-classification-dashboard)
+
+---
+
 ## Problem Statement
 The goal of this project is to build multiple machine learning classification models to predict whether a breast tumor is malignant or benign using the Breast Cancer Wisconsin dataset. The models are evaluated using comprehensive performance metrics including accuracy, AUC, precision, recall, F1 score, and Matthews Correlation Coefficient (MCC). The project demonstrates a complete end-to-end ML workflow including data preprocessing, model training, evaluation, and deployment via an interactive Streamlit web application.
 
@@ -126,9 +133,6 @@ tumor-classification-dashboard/
 └── README.md                       # Project documentation
 ```
 
-**Note:** Both `model_training.py` and `model_training.ipynb` contain the same training code. 
-- Use `.py` file for command line execution
-- Use `.ipynb` file for step-by-step execution in Jupyter/Google Colab
 
 ---
 
@@ -136,7 +140,7 @@ tumor-classification-dashboard/
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/jomy-g/tumor-classification-dashboard.git
 cd tumor-classification-dashboard
 ```
 
@@ -155,7 +159,9 @@ python model_training.py
 streamlit run app.py
 ```
 
-The app will open in your browser at `http://localhost:8501`
+Local Access: The app will open in your browser at `http://localhost:8501`
+
+OR use the deployed version: https://tumor-classification-dashboard-d6kxf5xxmzk8gza3ujfuae.streamlit.app/
 
 ---
 
@@ -179,7 +185,9 @@ The deployed web application provides:
 
 **Platform:** Streamlit Community Cloud (FREE)
 
-**Deployment URL:** [Your Streamlit App URL]
+**Live Application:** [Breast Cancer Classification App](https://tumor-classification-dashboard-d6kxf5xxmzk8gza3ujfuae.streamlit.app/)
+
+**GitHub Repository:** [https://github.com/jomy-g/tumor-classification-dashboard](https://github.com/jomy-g/tumor-classification-dashboard)
 
 **Deployment Steps:**
 1. Push code to GitHub repository
@@ -187,6 +195,8 @@ The deployed web application provides:
 3. Select repository and branch
 4. Specify `app.py` as main file
 5. Deploy
+
+**Status:** ✅ Successfully Deployed
 
 ---
 
@@ -212,36 +222,3 @@ For testing the app, use the provided `breast_cancer_test_data.csv` file which c
 - 1 diagnosis column (0=Malignant, 1=Benign)
 
 ---
-
-## Future Enhancements
-
-1. **Hyperparameter Tuning:** Grid/Random search for optimal parameters
-2. **Feature Engineering:** Create additional derived features
-3. **Deep Learning:** Implement neural network models
-4. **Explainability:** Add SHAP/LIME for model interpretability
-5. **Model Comparison:** Add ROC curve overlay for all models
-6. **Cross-Validation:** Implement k-fold CV for more robust evaluation
-7. **Ensemble Stacking:** Combine top models for improved performance
-
----
-
-## License
-
-This project is for educational purposes as part of the BITS Pilani M.Tech (AIML) Machine Learning course assignment.
-
----
-
-## Author
-
-**Course:** M.Tech in AI & ML / Data Science & Engineering  
-**Institution:** BITS Pilani Work Integrated Learning Programmes  
-**Assignment:** ML Assignment 2 - Classification Models & Deployment
-
----
-
-## Acknowledgments
-
-- Dataset: UCI Machine Learning Repository - Breast Cancer Wisconsin (Diagnostic) Dataset
-- Dr. William H. Wolberg, W. Nick Street, Olvi L. Mangasarian for dataset creation
-- Scikit-learn library for ML algorithms
-- Streamlit for web app framework
