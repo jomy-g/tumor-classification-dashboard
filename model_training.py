@@ -27,6 +27,9 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
+# Save scaler for use in app
+pickle.dump(scaler, open("model/scaler.pkl", "wb"))
+
 # Models
 models = {
     "Logistic Regression": LogisticRegression(max_iter=1000),
@@ -34,7 +37,7 @@ models = {
     "KNN": KNeighborsClassifier(),
     "Naive Bayes": GaussianNB(),
     "Random Forest": RandomForestClassifier(),
-    "XGBoost": XGBClassifier(eval_metric='logloss')
+    "XGBoost": XGBClassifier(eval_metric='logloss', use_label_encoder=False)
 }
 
 results = []
@@ -65,9 +68,13 @@ for name, model in models.items():
 
 results_df = pd.DataFrame(results, columns=["Model","Accuracy","AUC","Precision","Recall","F1","MCC"])
 print(results_df)
+print("\nAll metrics summary:")
+print(results_df.to_string(index=False))
 
-# Save test dataset to CSV for Streamlit testing
+# Save test dataset with labels to CSV for Streamlit testing
 X_test_df = pd.DataFrame(X_test, columns=data.feature_names)
+X_test_df['diagnosis'] = y_test  # Add the target column
 X_test_df.to_csv("breast_cancer_test_data.csv", index=False)
 
-print("Test data exported as test_data.csv")
+print("\nTest data exported as breast_cancer_test_data.csv")
+print(f"Test data shape: {X_test_df.shape}")
